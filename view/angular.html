@@ -1,0 +1,138 @@
+<!doctype html>
+	<html ng-app="myApp">
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    
+    </head>
+    <style >
+     .list{
+        background-color: blue;
+        height: 30px;
+        /*width: 100%*/
+        margin-top: 30px;
+
+     }
+     .list li{
+        display: inline;
+        height: 20px;
+        color:red;
+
+     }
+     /*.toolhover{
+        color:orange;
+        border:1px solid black;
+         width: 100px;
+        height: 100px;
+        background-color: green;
+        white-space: nowrap;
+        
+
+     }*/
+
+
+
+    </style>
+    <h1 class="text-center"><b>welcome to angular</b></h1>
+    <body ng-controller="myCtrl">
+       
+     <div class="col-md-offset-3 col-md-6 container">
+     	<div class="text-center  "><input type="text"   ng-model="frominput" placeholder='search'></div>
+     	<br/>
+     	<table class= "table table-bordered table-striped text-center">
+     		<tr >
+            <th class="text-center ">index</th>
+            <th class="text-center ">username</th>
+            <th class="text-center">password</th>
+            <th class="text-center">type</th>
+            <th class="text-center ">delete</th>
+            </tr>
+            <tr ng-repeat ="data in myArray | filter:frominput | orderBy : 'number'  ">
+            <td>{{$index+1}}</td>
+            <td>{{data.number}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.type}}</td>
+            <td><i class="glyphicon glyphicon-trash" ng-click = "fnDel($index)"></i>
+                <i class="glyphicon glyphicon-edit" ng-click = "fnEdit()"></i>
+            </td>
+            </tr>
+        </table>
+     </div>
+     <form>
+         <div class="col-md-offset-3 col-md-6">
+          <h1 class="text-center">sign up form</h1>
+        <div class ="form-group">
+      <lable >username</label>
+        <input type="text" class="form-control" placeholder="enter your name" ng-model = "uname"/>
+     </div>
+     <div class ="form-group ">
+      <lable >password</label>
+      <input type="password" class="form-control" placeholder="enter secure password" ng-model ="passwrd"/>
+
+     </div>
+     <div class ="form-group ">
+      <lable  >select-option</label>
+      
+      <select  class="form-control"  ng-model ="select">
+       <option>registration</option>
+       <option>guest login</option>
+       <option>login</option>
+      </select>
+     </div>
+     <div class="text-center">
+        <button class="btn-success btn-lg" ng-click="whenSubmit()">submit<button>
+        <button class="btn-success btn-lg" ng-click="whenUpdate()">update<button>
+     </div>
+   </div>
+   </form>
+   <br/>
+    
+   <div class=" col-md-offset-2 col-md-8">
+     <ul class="list" >
+     <li class ="col-md-3 " data-toggle="tooltip" data-placement="bottom" data-content="using tooltip">Home</li>
+     
+    <!--  <div id="example" ><ul>
+     <li> <a href="">login</a></li>
+      <li> <a href="">logo</a></li>
+      </ul></div> -->
+     
+     <li class ="col-md-3">sign up</li> 
+     <li class ="col-md-3">contact us</li> 
+     <li class ="col-md-3">details</li>
+     </ul>
+   </div>
+
+  <!-- <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button> -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+   <script type="text/javascript" src= "../js/angular.js"></script>
+   <script type="text/javascript">
+   
+   angular.module('myApp', []).controller('myCtrl',function($scope){
+   /*	$scope.myArray = [ { number: 2, name: 'arun'} ,
+   	                   {number : 1, name: 'kumar' } ,
+   	                   {number : 10, name: 'kumar' },
+   	                   {number : 5, name: 'laxfsdfdf' },
+                       {number : 11, name: 'kumari' } ];
+       
+               });*/
+
+    $scope.myArray= [];
+    $scope.whenSubmit = function () {
+      $scope.myArray.push({number:$scope.uname,name:$scope.passwrd ,type:$scope.select});
+      $scope.uname ='';
+      $scope.passwrd='';
+      $scope.select='';
+    }
+    });
+
+    $scope.fnDel = function(index){
+    $scope.myArray.splice(index,1);
+    console.log($scope.myArray);
+   };
+   $(function () {
+   $('[data-toggle="tooltip"]').tooltip()
+   $('#example').tooltip(options)
+    })
+   </script>
+
+    </body>
+    </html>

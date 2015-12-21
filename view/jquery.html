@@ -1,0 +1,50 @@
+<!doctype html>
+	<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    
+    </head>
+    <body>
+    	<p class="para col-md-offset-3 col-md-6 text-center">hello</p>
+    	 <div class="col-md-offset-3 col-md-6">
+	       <table class="table table-bordered  table-striped table-responsive">
+                  <tr>
+    	              <th>number</th>
+    	              <th>name</th>
+                  </tr>
+                  <tr  >
+    	               <td class="getdata" ></td>
+    	               <td class="getdata"></td>
+                       </tr>
+                        <tr>
+    	                <td class="getdata"></td>
+    	                <td class="getdata"></td>
+                       </tr>
+                       <tr>
+    	               <td></td>
+    	               <td></td>
+                   </tr>
+           </table>
+	</div>
+	
+	<!-- 	<ul class = "getdata">
+			<li></li></ul> --><script type="text/javascript" src = "../js/jquery-1.11.3.js"></script>
+       <script type="text/javascript">
+          $(document).ready(function()
+            {
+            $('.para').append(' world');
+            
+
+
+           var jsondata = [ { number: 1, name: 'arun'} ,{number : 2, name: 'kumar' }  ];
+           for( var i=0;i<jsondata.length;i++)
+          
+          	{
+          	$('.getdata').append('<td>' + jsondata[i].number+ '</td>' );
+             };
+           
+         });
+       </script>
+
+	</body>
+	</html>

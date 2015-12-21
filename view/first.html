@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<style type="text/css">
+.develop{
+   border: 2px solid blue;
+   margin-bottom: 30px;
+}
+   .box{
+
+     border:1px solid orange;
+     width: 100px;
+     height: 100px;
+      background-color: orange;
+      margin-bottom: 30px;
+   }
+   .footer{
+   	background: #000;
+    color: #848484;
+    height: 40px;
+    width: 100%;
+   }
+   .font{
+   	font-size: 12px;
+   }
+
+
+</style>
+<body>
+	<center><b>welcome to bootstrap</b></center>
+  <div class = "col-md-6">
+  	<div class = "develop text-center"> hello 
+  	</div></div>
+  	 <div class = "col-md-6">
+
+  	<div class = "develop text-center"> world
+  	</div></div>
+  	<br><br>
+  <div class = "col-md-12 text-center"><div class = "develop"> 
+  	<select style="width:100%">
+  	<option>veg</option>
+    <option>Non-veg</option>
+    <option>salad</option>
+    </select>
+  	</div></div>
+  	<br><br>
+
+	<div class="col-md-offset-3 col-md-6 col-xs-offset-2 col-xs-8  text-center">
+		<div class=" col-md-4">
+			<div class = "box text-center">
+			hweosdj
+		    </div>
+		</div>
+		<div class=" col-md-4">
+			<div class = "box">
+			hweosdj
+		    </div>
+		</div>
+		<div class=" col-md-4">
+			<div class = "box">
+			hweosdj
+		    </div>
+		</div>
+	</div>
+	<div class="col-md-offset-3 col-md-6">
+		<table class="table table-bordered  table-striped table-responsive">
+    <tr>
+    	<th>number</th>
+    	<th>name</th>
+    </tr>
+    <tr>
+    	<td>1</td>
+    	<td>arun</td>
+    </tr>
+    <tr>
+    	<td>2</td>
+    	<td>kumar</td>
+    </tr>
+    <tr>
+    	<td>3</td>
+    	<td>vallamkonda</td>
+    </tr>
+     </table>
+	</div>
+	<form>
+	<div class="col-md-offset-3 col-md-6">
+		<h1 class="text-center">sign up form</h1>
+        <div class ="form-group">
+     	<lable >username</label>
+     		<input type="text" class="form-control" placeholder="enter your name" id = "uname"/>
+     </div>
+     <div class ="form-group ">
+     	<lable >password</label>
+     	<input type="password" class="form-control" placeholder="enter secure password" id ="passwrd"/>
+     </div>
+     <div class="text-center">
+      <button class="btn-success btn-lg" onclick="whenclick()">submit<button>
+     </div>
+ </form>
+     		
+	</div>
+	<hr>
+	<div class="col-md-12" style="margin-top:20px">
+		<div class="col-md-3">
+			how is the feeling from the data coming that can be visited accordingly yours lovings
+			for your kindness</div>
+			<div class="col-md-3">
+			how is the feeling from the data coming that can be visited accordingly yours lovings
+			for your kindness</div>
+			<div class="col-md-3">
+			how is the feeling from the data coming that can be visited accordingly yours lovings
+			for your kindness</div>
+			<div class="col-md-3">
+			how is the feeling from the data coming that can be visited accordingly yours lovings
+			for your kindness</div>
+	</div>
+	<hr>
+	<footer class=" col-md-offset-3 col-md-6 " >
+		<div class="footer">
+			<table class="font font-responsive">
+				<tr>
+					<td class="col-xs-4"><a href="">disclaimer</a>|
+					<a href="">terms & conditions</a>|
+					<a href="">site map</a>|</td>
+					<td class="col-xs-4">@ 2005-2014 GalaxE Solutions , Inc, All Rights
+					</td>
+					<td class="col-xs-4"><a href="https://www.facebook.com/"><img src="../images/images.png" height = "30px" width = "30px"></a>
+					</td>
+
+				</tr>
+			</table></div>
+	</footer>
+	<script type="text/javascript"> 
+	function whenclick()
+	    {
+	    var username = document.getElementById('uname').value;
+	    var password = document.getElementById('passwrd').value;
+	    alert('you entered : '+username);
+	    alert('you entered :  '+password);
+	   
+	    }
+
+	 </script>
+	</body>
+</html>
