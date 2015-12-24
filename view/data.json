@@ -1,0 +1,6 @@
+{ 
+	'jsondata' :[ 
+	{'name':'arun','age':10},
+	{'name':'vallamkonda','age':12}
+	            ]
+}

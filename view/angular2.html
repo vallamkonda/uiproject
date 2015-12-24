@@ -1,0 +1,74 @@
+<!doctype html>
+<html ng-app="myApp">
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    </head>
+    <body class="col-md-offset-3 col-md-6">
+    	<h1 class="text-center">login form</h1>
+    	<div  ng-controller="myCtrl" ng-init="switch=true">
+     <form name="myform" class ="jumbotron ">
+          <div class ="form-group  ">
+               <lable >username</label>
+               <input type="text" name=" username " class="form-control" placeholder="enter your name" ng-model = "user.uname" required />
+               <span style="color:red">
+                <span ng-show="myform.username.$error.required">user name required.
+                </span>
+               </span>
+          </div>
+          <div class ="form-group ">
+               <lable >password</label>
+               <input type="password" name= "password"class="form-control" placeholder="enter secure password" ng-model ="user.passwrd" required/>
+               <span style="color:red">
+                <span ng-show ="myform.password.$error.required">password required.
+                </span>
+               </span>
+          </div>
+          <div class ="form-group ">
+               <lable >Email id</label>
+               <input type="email" name="email" class="form-control" placeholder="enter correct email" ng-model ="user.email"/>
+               <span style="color:red">
+                  <span ng-show ="myform.email.$error.required">email required</span>
+                 <span ng-show ="myform.email.$error.email"> enter valid email</span>
+                </span>
+               
+          </div>
+          <div>
+             <input type="checkbox" ng-click="term()" > I Accept terms & conditions.
+
+          </div>
+
+          <div>
+               <input type="button" ng-model="switch" ng-disabled ="myform.username.$error.required || myform.password.$error.required || myform.email.$error.required || myform.email.$error.email " ng-click="save(user)" value="save">
+               <input type="button" ng-click="reset()" value="reset">
+          </div>
+          <br>
+         
+     </form>
+          {{user}}<br><br>
+          {{store}}
+         </div>
+     <script type="text/javascript" src= "../js/angular.js"></script>
+      <script type="text/javascript">
+            angular.module('myApp', []).controller('myCtrl', function($scope)
+               {
+     	            $scope.master= {uname:"arun",passwrd:"konda",email:"vallamkondaarun@gmail.com"};
+     	            
+     	            $scope.save=function(user)
+     	                 {
+                       $scope.term=function()
+     	                {
+                          $scope.switch= !$scope.switch;
+     	                }
+                       $scope.store=angular.copy($scope.user);
+     	                 }
+     	            $scope.reset=function()
+     	                 {
+     		           $scope.user=angular.copy($scope.master);
+
+     	                 }
+     	            $scope.save();
+     	            $scope.reset();
+                });
+     </script>
+    </body>
+</html>
